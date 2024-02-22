@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		avatarElement.classList.add("show");
 	});
 });
-
+/*
 var btnMobileMenu = document.querySelector('.btn-mobile-menu__icon');
 var navigationWrapper = document.querySelector('.navigation-wrapper');
 
@@ -79,8 +79,14 @@ btnMobileMenu.addEventListener('click', function () {
 	btnMobileMenu.classList.toggle('animated');
 	btnMobileMenu.classList.toggle('fadeIn');
 });
-
+*/
 var imgUrls = [
+	"assets/img/99732256.jpg",
+	"assets/img/05983780.jpg",
+	"assets/img/08710712.jpg",
+	"assets/img/09183364.jpg",
+	"assets/img/11573974.jpg",
+	"assets/img/13171493.jpg",
 	"assets/img/18958785.jpg",
 	"assets/img/23601458.jpg",
 	"assets/img/23870987.jpg",
@@ -98,14 +104,8 @@ var imgUrls = [
 	"assets/img/74264577.jpg",
 	"assets/img/84657530.jpg",
 	"assets/img/89107377.jpg",
-	"assets/img/99732256.jpg",
-	"assets/img/05983780.jpg",
-	"assets/img/08710712.jpg",
-	"assets/img/09183364.jpg",
-	"assets/img/11573974.jpg",
-	"assets/img/13171493.jpg"
 	];
-var index = Math.round( Math.random() * 23 );
+var index = Math.round( Math.random() * 22 );
 var panel = document.querySelector('#panel');
 var imgUrl = imgUrls[index];
 var url = imgUrl;
