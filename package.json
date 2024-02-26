@@ -1,0 +1,21 @@
+{
+  "name": "satxm-home-page",
+  "version": "1.0.0",
+  "description": "Satxm Home Page",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satxm/satxm.github.io.git"
+  },
+  "keywords": [
+    "Satxm",
+    "HomePage"
+  ],
+  "author": "satxm",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Satxm/satxm.github.io/issues"
+  },
+  "homepage": "https://github.com/Satxm/satxm.github.io#readme"
+}
