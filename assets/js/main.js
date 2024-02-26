@@ -144,7 +144,7 @@ var imgUrls = [
 var index = Math.round( Math.random() * 88 );
 var panel = document.querySelector('#panel');
 var imgUrl = imgUrls[index];
-var url = "https://npm.onmicrosoft.cn/satxm-home-page@latest/assets/img/" + imgUrl;
+var url = "https://unpkg.com/satxm-home-page@latest/assets/img/" + imgUrl;
 panel.style.background = "url('" + url + "') center center no-repeat #666";
 panel.style.backgroundSize = "cover";
 	
