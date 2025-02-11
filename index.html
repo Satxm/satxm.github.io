@@ -30,21 +30,51 @@
       href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+    />
     <style>
       :root {
         --docsifytabs-border-color: #ededed;
         --docsifytabs-tab-highlight-color: purple;
       }
-      code .app-name .app-name-link {
-        font-family: "Inconsolata", sans-serif;
-      }
       body {
-        font-family: "LXGW WenKai", sans-serif, "Times New Roman", 思源宋体, "Noto Serif SC", serif;
+        font-family: "LXGW WenKai", sans-serif, "Times New Roman", 思源宋体,
+          "Noto Serif SC", serif;
         font-size: 18px;
         line-height: 1.5em;
       }
       .sidebar ul li a {
         font-size: 16px;
+      }
+      .app-name .app-name-link {
+        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
+        font-size: 16;
+      }
+      .docsify-copy-code-button {
+        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
+        font-size: 0.8em !important;
+        border-radius: 10px !important;
+      }
+      .markdown-section code {
+        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
+      }
+      .markdown-section pre > code {
+        padding: 8px;
+      }
+      .markdown-section pre[data-lang] {
+        overflow: auto !important;
+      }
+
+      .markdown-section pre[data-lang] code {
+        overflow: visible;
+      }
+
+      .line-numbers .line-numbers-rows {
+        border-right: 0px solid white;
+        /* Fix paddings to align with code.*/
+        padding: 5px; /* Same as code block */
       }
     </style>
   </head>
@@ -55,7 +85,7 @@
         // 项目名称
         name: "Satxm's Guide",
         // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
-        repo: "https://github.com/Satxm",
+        repo: "https://github.com/Satxm/satxm.github.io",
         // 侧边栏，默认加载的是项目根目录下的_sidebar.md文件
         loadSidebar: true,
         // 导航栏，默认加载的是项目根目录下的_navbar.md文件
@@ -100,6 +130,63 @@
           tabComments: true, // default
           tabHeadings: true, // default
         },
+        markdown: {
+          renderer: {
+            code: function (code, lang) {
+              if (lang == "html") {
+                code = code
+                  .replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#039;");
+              }
+              return (
+                '<pre data-lang="' +
+                lang +
+                '"><code class="line-numbers language-' +
+                lang +
+                '">' +
+                code +
+                "</code></pre>"
+              );
+            },
+          },
+        },
+        plugins: [
+          function editButton(hook, vm) {
+            // The date template pattern
+            $docsify.formatUpdated = "{YYYY}/{MM}/{DD} {HH}:{mm}";
+
+            hook.beforeEach((html) => {
+              const url =
+                "https://github.com/Satxm/satxm.github.io/tree/main/" +
+                vm.route.file;
+              const edit = "[📝 在 Github 上编辑](" + url + ")\n";
+              const lsat =
+                "<p style='text-align: right;'>最后修改于：{docsify-updated}</p>";
+
+              return edit + html + "<hr/>" + lsat;
+            });
+          },
+          function pageFooter(hook, vm) {
+            var footer = [
+              "<footer style='text-align: center;'>",
+              '<span><a href="https://github.com/Satxm">Satxm</a> &copy; 2024.</span>',
+              '<span> 由 <a href="https://github.com/docsifyjs/docsify" target="_blank">Docsify</a> 强力驱动</span>',
+              "</footer>",
+            ].join("");
+
+            hook.afterEach(function (html) {
+              return html + footer;
+            });
+          },
+          function (hook, vm) {
+            hook.doneEach(function (html) {
+              Prism.highlightAll();
+            });
+          },
+        ],
       };
     </script>
     <!-- Docsify v4 -->
@@ -115,6 +202,9 @@
     <!-- 代码高亮 -->
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-vim.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
     <!-- 首页一言 -->
     <script src="/js/hitokoto.js"></script>
     <!-- 标签页 -->
@@ -123,5 +213,9 @@
     <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
     <!-- 注释模块 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-footnote/dist/docsify-footnote.min.js"></script>
+    <!-- 在 Github 上编辑 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+    <!-- 行号 -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
   </body>
 </html>

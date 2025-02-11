@@ -90,7 +90,7 @@ sudo systemctl restart docker
 
 ## 一些 Daocker 镜像
 
-```bash
+```docker
 
 # Dpanel
 
