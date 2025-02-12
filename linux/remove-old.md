@@ -1,6 +1,4 @@
 
-# 卸载旧内核
-
 ## 查看已安装内核
 
 ```bash
@@ -19,7 +17,7 @@ sudo apt-get remove 需要卸载的内核
 sudo apt-get purge 需要卸载的内核 
 ```
 
-更新系统引导
+## 更新系统引导
 
 ```bash
 sudo update-grub 

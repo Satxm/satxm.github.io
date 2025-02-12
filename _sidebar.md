@@ -4,7 +4,7 @@
   * [安装 Aria2 下载器](linux/install-aria2.md)
   * [安装 Edge 浏览器](linux/install-edge.md)
   * [设置时区](linux/local-rtc.md)
-  * [移除旧版内核](linux/remove-old.md)
+  * [移除旧内核](linux/remove-old.md)
   * [配置 SSH](linux/ssh-settings.md)
   * [SSH 自动切换中文](linux/ssh-zh_cn.md)
   * [启用 sudo 权限](linux/sudo-user.md)

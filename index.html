@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <title>Satxm's Guide</title>
@@ -16,6 +16,11 @@
     <link
       href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
       rel="stylesheet"
+    />
+    <!-- LateX -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
     />
     <!-- 加载字体 -->
     <link
@@ -42,15 +47,19 @@
       body {
         font-family: "LXGW WenKai", sans-serif, "Times New Roman", 思源宋体,
           "Noto Serif SC", serif;
-        font-size: 18px;
-        line-height: 1.5em;
+        line-height: 125%;
+      }
+      .content {
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+        max-width: 86rem;
       }
       .sidebar ul li a {
-        font-size: 16px;
+        font-size: 14px;
       }
       .app-name .app-name-link {
         font-family: "Inconsolata", "LXGW WenKai", sans-serif;
-        font-size: 16;
+        font-size: 14;
       }
       .docsify-copy-code-button {
         font-family: "Inconsolata", "LXGW WenKai", sans-serif;
@@ -60,21 +69,27 @@
       .markdown-section code {
         font-family: "Inconsolata", "LXGW WenKai", sans-serif;
       }
+      .markdown-section pre {
+        padding: 10px 0.5rem;
+      }
       .markdown-section pre > code {
         padding: 8px;
       }
-      .markdown-section pre[data-lang] {
-        overflow: auto !important;
+      .pagination-item-title {
+        font-size: 18px !important;
       }
-
-      .markdown-section pre[data-lang] code {
-        overflow: visible;
+      .markdown-section h1 {
+        font-size: 1.5rem;
       }
-
-      .line-numbers .line-numbers-rows {
-        border-right: 0px solid white;
-        /* Fix paddings to align with code.*/
-        padding: 5px; /* Same as code block */
+      .markdown-section h2 {
+        font-size: 1.25rem;
+        margin: 30px 0 0.8rem;
+      }
+      .markdown-section h3 {
+        font-size: 1rem;
+      }
+      code[class*="language-"] {
+        font-size: 14px !important;
       }
     </style>
   </head>
@@ -82,22 +97,14 @@
     <div id="app">加载中...</div>
     <script>
       window.$docsify = {
-        // 项目名称
-        name: "Satxm's Guide",
-        // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
-        repo: "https://github.com/Satxm/satxm.github.io",
-        // 侧边栏，默认加载的是项目根目录下的_sidebar.md文件
-        loadSidebar: true,
-        // 导航栏，默认加载的是项目根目录下的_navbar.md文件
-        loadNavbar: true,
-        // 封面，默认加载的是项目根目录下的_coverpage.md文件
-        coverpage: true,
-        // 最大渲染的标题层级
-        maxLevel: 5,
-        // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
-        subMaxLevel: 4,
-        // 小屏设备下合并导航栏到侧边栏
-        mergeNavbar: true,
+        name: "Satxm's Guide", // 项目名称
+        repo: "https://github.com/Satxm/satxm.github.io", // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
+        loadSidebar: true, // 侧边栏，默认加载的是项目根目录下的_sidebar.md文件
+        loadNavbar: true, // 导航栏，默认加载的是项目根目录下的_navbar.md文件
+        coverpage: true, // 封面，默认加载的是项目根目录下的_coverpage.md文件
+        maxLevel: 5, // 最大渲染的标题层级
+        subMaxLevel: 4, // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
+        mergeNavbar: true, // 小屏设备下合并导航栏到侧边栏
         /*搜索相关设置*/
         search: {
           maxAge: 86400000, // 过期时间，单位毫秒，默认一天
@@ -130,28 +137,13 @@
           tabComments: true, // default
           tabHeadings: true, // default
         },
-        markdown: {
-          renderer: {
-            code: function (code, lang) {
-              if (lang == "html") {
-                code = code
-                  .replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;")
-                  .replace(/"/g, "&quot;")
-                  .replace(/'/g, "&#039;");
-              }
-              return (
-                '<pre data-lang="' +
-                lang +
-                '"><code class="line-numbers language-' +
-                lang +
-                '">' +
-                code +
-                "</code></pre>"
-              );
-            },
+        pagination: {
+          previousText: "上一篇",
+          nextText: {
+            "/": "下一篇",
           },
+          crossChapter: true,
+          crossChapterText: true,
         },
         plugins: [
           function editButton(hook, vm) {
@@ -198,7 +190,7 @@
     <!-- 搜索功能 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <!-- 复制到剪贴板 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <!-- 代码高亮 -->
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
@@ -215,7 +207,12 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-footnote/dist/docsify-footnote.min.js"></script>
     <!-- 在 Github 上编辑 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-    <!-- 行号 -->
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <!-- 分页导航 -->
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- Latex -->
+    <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
+    <!-- CDN files for docsify-katex -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
   </body>
 </html>
