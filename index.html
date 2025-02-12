@@ -49,10 +49,12 @@
           "Noto Serif SC", serif;
         line-height: 125%;
       }
-      .content {
-        margin: 0 auto;
-        padding: 0 1.5rem 4rem;
-        max-width: 86rem;
+      @media screen and (min-width: 960px) {
+        .content {
+          margin: 0 auto;
+          padding: 0 1.5rem 4rem;
+          max-width: 86rem;
+        }
       }
       .sidebar ul li a {
         font-size: 14px;
@@ -163,6 +165,7 @@
           },
           function pageFooter(hook, vm) {
             var footer = [
+              "<hr><br>",
               "<footer style='text-align: center;'>",
               '<span><a href="https://github.com/Satxm">Satxm</a> &copy; 2024.</span>',
               '<span> 由 <a href="https://github.com/docsifyjs/docsify" target="_blank">Docsify</a> 强力驱动</span>',
