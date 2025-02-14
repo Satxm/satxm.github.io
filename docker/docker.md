@@ -5,7 +5,7 @@
 
 如果你过去安装过 Docker，先卸载掉已安装 Docker：
 
-```
+```bash
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do apt-get remove $pkg; done
 ```
 

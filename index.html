@@ -164,10 +164,12 @@
             });
           },
           function pageFooter(hook, vm) {
+            var date = new Date();
+            var year = date.getFullYear();
             var footer = [
               "<hr><br>",
               "<footer style='text-align: center;'>",
-              '<span><a href="https://github.com/Satxm">Satxm</a> &copy; 2024.</span>',
+              '<span><a href="https://github.com/Satxm">Satxm</a> &copy; ' + year + '.</span>',
               '<span> 由 <a href="https://github.com/docsifyjs/docsify" target="_blank">Docsify</a> 强力驱动</span>',
               "</footer>",
             ].join("");
