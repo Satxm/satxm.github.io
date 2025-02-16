@@ -13,6 +13,7 @@
   * 
 * **Windows**
   * [登录界面隐藏用户](win/win-hide.md)
+  * [删除右键菜单的 AMD 项目](win/remove-amd.md)
   * 
 * **Docker**
   * [Docker](docker/docker.md)

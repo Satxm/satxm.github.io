@@ -1,9 +1,9 @@
 
-## 修改显示信息
+# 修改 tty/ssh 显示信息
 
 `/etc/update-motd.d/` 目录下，数字越小运行越早，该目录下可输出系统信息、输出内核信息、运行自定义脚本等
 
-### 输出内核信息
+## 输出内核信息
 
 ```bash
 vim /etc/update-motd.d/00-header 
@@ -30,7 +30,7 @@ printf "Welcome to %s %s (%s %s %s)\n" "$LSBI" "$LSBR" "$(uname -o)" "$(uname -r
 Welcome to Debian 12 (GNU/Linux 6.1.0-23-amd64 x86_64)
 ```
 
-### 修改自定义欢迎语
+## 修改自定义欢迎语
 
 修改 `/etc/motd` 文件，该文件不可运行脚本，仅输出文本
 
