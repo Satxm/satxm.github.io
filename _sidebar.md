@@ -12,7 +12,7 @@
   * [修改显示信息](linux/tty-motd.md.md)
   * 
 * **Windows**
-  * [登录界面隐藏用户](win/win-hide.md)
+  * [在登录界面隐藏用户](win/win-hide.md)
   * [删除右键菜单的 AMD 项目](win/remove-amd.md)
   * 
 * **Docker**
