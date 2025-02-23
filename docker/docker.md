@@ -6,14 +6,14 @@
 如果你过去安装过 Docker，先卸载掉已安装 Docker：
 
 ```bash
-for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do apt-get remove $pkg; done
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do apt remove $pkg; done
 ```
 
 安装依赖：
 
 ```bash
-apt-get update
-apt-get install ca-certificates curl gnupg
+apt update
+apt install ca-certificates curl gnupg
 ```
 
 信任 Docker 的 GPG 公钥并添加仓库：
@@ -54,8 +54,8 @@ tee /etc/apt/sources.list.d/docker-ce.list > /dev/null
 安装 Docker
 
 ```bash
-apt-get update
-apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+apt update
+apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 添加 Docker 镜像源
