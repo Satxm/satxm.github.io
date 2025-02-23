@@ -9,13 +9,13 @@ dpkg --get-selections | grep linux
 ## 卸载旧内核
 
 ```bash
-sudo apt-get remove 需要卸载的内核
+sudo apt remove <old-image>
 ```
 
 ## 卸载旧内核配置文件
 
 ```bash
-sudo apt-get purge 需要卸载的内核 
+sudo apt purge <old-image>
 ```
 
 ## 更新系统引导
