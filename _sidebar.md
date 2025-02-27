@@ -1,6 +1,7 @@
 * **Linux**
+  * [启用命令的别名和颜色](linux/bash-alias-color.md)
   * [修改语言](linux/change-lang.md)
-  * [启用命令的别名](linux/enable-alias-cmd.md)
+  * [Debian 换源](linux/debian-source.md)
   * [安装 Aria2 下载器](linux/install-aria2.md)
   * [安装中文字体](linux/install-chsfonts.md)
   * [安装 Edge 浏览器](linux/install-msedge.md)
@@ -17,10 +18,12 @@
   * 
 * **Windows**
   * [在登录界面隐藏用户](win/win-hide.md)
+  * [Windows 注册表优化](win/win-regs.md)
   * [删除右键菜单的 AMD 项目](win/remove-amd.md)
   * 
 * **Docker**
-  * [Docker](docker/docker.md)
+  * [安装 Docker](docker/install-docker.md)
+  * [Daocker 镜像](docker/docker-imgs.md)
   * 
 * **软件**
   * [Git 使用说明](soft/git-usage.md)

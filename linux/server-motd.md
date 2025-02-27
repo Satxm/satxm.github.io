@@ -35,5 +35,5 @@ Welcome to Debian 12 (GNU/Linux 6.1.0-23-amd64 x86_64)
 修改 `/etc/motd` 文件，该文件不可运行脚本，仅输出文本
 
 ```bash 
-vim /etc/motd
+sudo vim /etc/motd
 ```

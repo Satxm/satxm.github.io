@@ -146,6 +146,29 @@
           crossChapter: true,
           crossChapterText: true,
         },
+        "flexible-alerts": {
+          style: "flat",
+          note: {
+            label: {
+              "/": "说明",
+            },
+          },
+          tip: {
+            label: {
+              "/": "提示",
+            },
+          },
+          warning: {
+            label: {
+              "/": "警告",
+            },
+          },
+          attention: {
+            label: {
+              "/": "注意",
+            },
+          },
+        },
         plugins: [
           function editButton(hook, vm) {
             $docsify.formatUpdated = "{YYYY}/{MM}/{DD} {HH}:{mm}";
@@ -195,6 +218,8 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-vim.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-docker.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-batch.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-shell.min.js"></script>
     <!-- 首页一言 -->
     <script src="/js/hitokoto.js"></script>
     <!-- 标签页 -->
@@ -211,5 +236,7 @@
     <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
     <!-- Docsify-Katex -->
     <script src="//cdn.jsdelivr.net/npm/docsify-katex"></script>
+    <!-- Markdown 提示块 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts"></script>
   </body>
 </html>
