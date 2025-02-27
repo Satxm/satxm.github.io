@@ -1,7 +1,7 @@
 
 # SSH连接时更换为中文
 
-修改 ```.bashrc``` 或 ```/etc/bash.bashrc``` 添加以下内容，以便SSH连接后切换中文
+`vim .bashrc` 或 `sudo vim /etc/bash.bashrc` 添加以下内容，以便SSH连接后切换中文
 
 ```vim 
 # Change Language to zh-CN when SSH connected:

@@ -6,8 +6,8 @@
 ## 输出内核信息
 
 ```bash
-vim /etc/update-motd.d/00-header 
-chmod +x /etc/update-motd.d/00-header
+sudo vim /etc/update-motd.d/00-header 
+sudo chmod +x /etc/update-motd.d/00-header
 ```
 
 ```vim

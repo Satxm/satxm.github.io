@@ -4,7 +4,7 @@
 修改 `/etc/locale.gen` 文件
 
 ```bash
-vim /etc/locale.gen
+sudo vim /etc/locale.gen
 ```
 
 添加以下内容或取消以下内容前注释符号，之后运行 ```locale-gen``` 重新生成语言
@@ -17,7 +17,7 @@ zh_CN.UTF-8 UTF-8
 修改 `/etc/default/locale` 文件，按需修改
 
 ```bash
-vim /etc/default/locale
+sudo vim /etc/default/locale
 ```
 
 ```vim

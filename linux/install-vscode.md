@@ -12,8 +12,8 @@ sudo apt install curl apt-transport-https gnupg software-properties-common -y
 
 ```bash
 install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg
-chmod a+r /etc/apt/keyrings/microsoft.gpg
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg
+sudo chmod a+r /etc/apt/keyrings/microsoft.gpg
 ```
 
 ## 添加存储库：
@@ -21,7 +21,7 @@ chmod a+r /etc/apt/keyrings/microsoft.gpg
 ```bash
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | \
-tee /etc/apt/sources.list.d/vscode.list > /dev/null
+sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 ```
 
 ## 更新并安装 VSCode：

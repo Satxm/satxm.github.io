@@ -3,8 +3,8 @@
 ## 1、安装Aria2
 
 ```bash
-apt update
-apt install aria2 -y
+sudo apt update
+sudo apt install aria2 -y
 ```
 
 ## 2、设置Aria2

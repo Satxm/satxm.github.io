@@ -5,8 +5,8 @@
 ### 1、Gnome 游戏
 
 ```bash
-apt purge gnome-games -y
-apt autopurge
+sudo apt purge gnome-games -y
+sudo apt autopurge
 ```
 
 |应用|包名|
@@ -36,7 +36,7 @@ apt autopurge
 ### 2、按需卸载
 
 ```bash
-apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-clocks gnome-contacts gnome-logs gnome-maps gnome-music gnome-software gnome-sound-recorder gnome-todo gnome-weather goldendict libreoffice* rhythmbox seahorse shotwell simple-scan synaptic totem transmission-gtk yelp zutty -y
+sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-clocks gnome-contacts gnome-logs gnome-maps gnome-music gnome-software gnome-sound-recorder gnome-todo gnome-weather goldendict libreoffice* rhythmbox seahorse shotwell simple-scan synaptic totem transmission-gtk yelp zutty -y
 ```
 
 以下内容看自己需求进行卸载

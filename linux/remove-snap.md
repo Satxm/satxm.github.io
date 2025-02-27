@@ -77,7 +77,7 @@ sudo apt install --install-suggests gnome-software
 
 ```bash
 install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | gpg --dearmor -o /etc/apt/keyrings/mozilla.gpg
+curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/mozilla.gpg
 sudo chmod a+r /etc/apt/keyrings/mozilla.gpg
 ```
 
@@ -86,7 +86,7 @@ sudo chmod a+r /etc/apt/keyrings/mozilla.gpg
 ```bash
 echo \
 "deb [signed-by=/etc/apt/keyrings/mozilla.gpg] https://packages.mozilla.org/apt mozilla main" | \
-tee /etc/apt/sources.list.d/firefox.list > /dev/null
+sudo tee /etc/apt/sources.list.d/firefox.list > /dev/null
 ```
 
 ### 配置优先使用 Mozilla 库中的包
