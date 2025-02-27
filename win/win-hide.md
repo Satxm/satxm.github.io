@@ -4,7 +4,7 @@
 
 `Win + R` 输入 `cmd` 进入命令提示符。输入 `net user` 命令，结果如下。
 
-```bash
+```batch
 C:\Users\Admin>net user
 
 \\ADMIN-PC 的用户帐户

@@ -18,7 +18,7 @@ chmod a+r /etc/apt/keyrings/microsoft.gpg
 
 ## 添加存储库：
 
-```
+```bash
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | \
 tee /etc/apt/sources.list.d/vscode.list > /dev/null
@@ -35,5 +35,19 @@ sudo apt install code
 
 ```bash
 code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
-sed -i ":a;N;s/\n}/,\n\t\"locale\":\"zh-cn\"\n}/" "$HOME/.vscode\argv.json"
+sed -i ":a;N;s/\n}/,\n\t\"locale\":\"zh-cn\"\n}\n/" $HOME/.vscode/argv.json
 ```
+
+## 一些设置
+
+```bash
+echo \
+"{
+    \"files.autoSave\": \"afterDelay\",
+    \"editor.fontSize\": 16,
+    \"security.workspace.trust.enabled\": false,
+    \"workbench.colorTheme\": \"Default Light+\",
+}" | \
+tee $HOME/.config/Code/User/settings.json > /dev/null
+```
+

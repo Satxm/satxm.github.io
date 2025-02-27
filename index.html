@@ -39,6 +39,10 @@
       href="https://fastly.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@latest/css/codeLineNum.css"
       rel="stylesheet"
     />
+    <link
+      href="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --docsifytabs-border-color: #ededed;
@@ -56,29 +60,20 @@
           max-width: 86rem;
         }
       }
-      .sidebar ul li a {
-        font-size: 14px;
-      }
-      .app-name .app-name-link {
-        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
-        font-size: 14;
-      }
       .docsify-copy-code-button {
         font-family: "Inconsolata", "LXGW WenKai", sans-serif;
         padding: 0.25em 0.5em !important;
         font-size: 0.8em !important;
         border-radius: 10px !important;
       }
-      .markdown-section code {
-        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
-      }
       .markdown-section pre {
         padding: 10px 0.5rem;
         border-radius: 10px;
       }
       .markdown-section pre > code {
-        padding: 8px;
-        white-space: normal !important;
+        font-family: "Inconsolata", "LXGW WenKai", sans-serif;
+        padding: 5px;
+        white-space: break-spaces !important;
       }
       .pagination-item-title {
         font-size: 18px !important;
@@ -199,6 +194,7 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-vim.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-docker.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-batch.min.js"></script>
     <!-- 首页一言 -->
     <script src="/js/hitokoto.js"></script>
     <!-- 标签页 -->
@@ -215,7 +211,5 @@
     <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
     <!-- Docsify-Katex -->
     <script src="//cdn.jsdelivr.net/npm/docsify-katex"></script>
-    <!-- 行号 -->
-    <script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@latest/script/codeLineNum.min.js"></script>
   </body>
 </html>
