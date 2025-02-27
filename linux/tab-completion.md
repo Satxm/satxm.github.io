@@ -7,12 +7,16 @@
 sudo apt install bash-completion
 ```
 
-2、修改 ```/etc/bash.bashrc``` 文件（需要root权限）
+2、修改 ```/etc/bash.bashrc``` 文件（需要root权限）或 `~/.bashrc` 文件
+
+<!-- tabs:start -->
+
+#### **/etc/bash.bashrc**
 
 ```bash
-sudo vim /etc/bash.bashrc  
+sudo vim /etc/bash.bashrc 
 ```
-寻找以下内容
+找到文件中的下列代码
 
 ```vim
 # enable bash completion in interactive shells
@@ -24,6 +28,7 @@ sudo vim /etc/bash.bashrc
 #   fi
 # fi
 ```
+
 将注释符号#去掉，即改成
 
 ```vim
@@ -37,11 +42,10 @@ if ! shopt -oq posix; then
 fi
 ```
 
-**或**修改用户目录 ```.bashrc``` 文件
+#### **~/.bashrc**
 
 ```bash 
-cd ~ 
-vim .bashrc
+vim ~/.bashrc
 ```
 
 找到文件中的下列代码
@@ -64,6 +68,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 ```
+
+<!-- tabs:end -->
 
 3、最后 source 重载 ```/etc/bash.bashrc``` 文件或用户目录 ```.bashrc``` 文件
 

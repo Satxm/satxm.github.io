@@ -1,6 +1,6 @@
 * **Linux**
+  * [启用命令的别名和颜色](linux/bash-alias-color.md)
   * [修改语言](linux/change-lang.md)
-  * [启用命令的别名](linux/enable-alias-cmd.md)
   * [安装 Aria2 下载器](linux/install-aria2.md)
   * [安装中文字体](linux/install-chsfonts.md)
   * [安装 Edge 浏览器](linux/install-msedge.md)
@@ -17,6 +17,7 @@
   * 
 * **Windows**
   * [在登录界面隐藏用户](win/win-hide.md)
+  * [Windows 注册表优化](win/win-regs.md)
   * [删除右键菜单的 AMD 项目](win/remove-amd.md)
   * 
 * **Docker**
