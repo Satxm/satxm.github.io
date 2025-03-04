@@ -37,7 +37,7 @@ services:
 
 <!-- tabs:start -->
 #### **Docker**
-```docker
+```bash
 docker run -d --name nginx-proxy-manager --restart=always \
 --net=host -v /var/docker/nginx-proxy-manager/data:/data \
 -v /var/docker/nginx-proxy-manager/letsencrypt:/etc/letsencrypt \
@@ -48,7 +48,8 @@ chishin/nginx-proxy-manager-zh:latest
 ```yml
 version: '3'
 services:
-  app:
+  nginx-proxy-manager:
+    container_name: nginx-proxy-manager
     image: 'chishin/nginx-proxy-manager-zh:release'
     restart: always
     network_mode: host
@@ -60,7 +61,7 @@ services:
 
 ## xunlei
 
-```docker
+```bash
 docker run -d --restart=always --name=xunlei --net=host \
 -e XL_DASHBOARD_PORT=8091 \
 -v /var/docker/xunlei/data:/xunlei/data \
@@ -70,7 +71,7 @@ cnk3x/xunlei:latest
 
 ## qbittorrent
 
-```docker
+```bash
 docker run -d --restart=always --name=qbittorrent --net=host \
 -e PUID=0 -e PGID=0 -e TZ=Asia/ShangHai -e WEBUI_PORT=8090 \
 -v /var/docker/qbittorrent/config:/config \
@@ -80,7 +81,7 @@ linuxserver/qbittorrent:latest
 
 ## jellyfin
 
-```docker
+```bash
 docker run -d --restart=always --name=jellyfin --net=host \
 -v /var/docker/jellyfin/cache:/cache \
 -v /var/docker/jellyfin/config:/config \
@@ -98,9 +99,35 @@ docker run -d --restart=always --name=jellyfin --net=host \
 jellyfin/jellyfin:latest
 ```
 
+```yml
+version: '3'
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: 'jellyfin/jellyfin:latest'
+    network_mode: host
+    extra_hosts:
+      - 'www.themoviedb.org:3.166.244.31'
+      - 'www.themoviedb.org:3.166.244.28'
+      - 'www.themoviedb.org:3.166.244.54'
+      - 'www.themoviedb.org:3.160.188.78'
+      - 'image.tmdb.org:169.150.249.169'
+      - 'image.tmdb.org:143.244.49.177'
+      - 'api.themoviedb.org:31.13.76.99'
+      - 'api.themoviedb.org:13.226.61.7'
+      - 'api.themoviedb.org:103.246.246.144'
+    volumes:
+      - '/usr/share/fonts:/usr/share/fonts'
+      - '/var/media:/media'
+      - './config:/config'
+      - './cache:/cache'
+    container_name: jellyfin
+    restart: always
+```
+
 ## waline
 
-```docker
+```bash
 wget https://github.com/walinejs/waline/blob/main/assets/waline.sqlite
 docker run -d --name waline --restart=always --net=host \
 -v /var/docker/waline:/app/data \

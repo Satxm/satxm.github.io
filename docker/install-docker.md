@@ -67,17 +67,16 @@ sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": [
-    "https://dhub.kubesre.xyz",
     "https://docker.1panel.live",
-    "https://docker.kejilion.pro",
-    "https://docker.m.daocloud.io",
-    "https://docker.nastool.de",
-    "https://docker.unsee.tech",
-    "https://dockerhub.icu",
-    "https://dockerpull.org",
-    "https://hub.crdz.gq",
-    "https://hub.littlediary.cn",
+    "https://docker.1ms.run",
+    "https://docker.1panel.top",
+    "https://k-docker.asia",
+    "https://docker.xuanyuan.me",
     "https://hub.rat.dev",
+    "https://docker.m.daocloud.io",
+    "https://dhub.kubesre.xyz",
+    "https://docker.kejilion.pro",
+    "https://hub.littlediary.cn",
     "https://hub.xdark.top",
     "https://registry.dockermirror.com"
   ]
