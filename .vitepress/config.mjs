@@ -15,6 +15,14 @@ export default {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['script', { src: 'https://v1.hitokoto.cn/?encode=js&select=%23hitokoto' }],
   ],
+  lastUpdated: true,
+  cleanUrls: true,
+  base: '/',
+  markdown: {
+    image: {
+      lazyLoading: true
+    },
+  },
   themeConfig: {
     logo: '/imgs/logo-mini.svg',
     nav: topnav,
@@ -67,12 +75,7 @@ export default {
     },
     footer: {
       message: '基于 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可发布',
-      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/">VitePress</a> <a href="https://hitokoto.cn/">Hitokoto</a> 强力支持`
-    },
-    markdown: {
-      image: {
-        lazyLoading: true
-      },
+      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/">VitePress</a> \& <a href="https://hitokoto.cn/">Hitokoto</a> 强力驱动`
     },
     returnToTopLabel: "回到顶部",
     sidebarMenuLabel: "菜单",

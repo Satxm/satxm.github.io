@@ -1,1 +1,15 @@
 # Linux
+
+- [启用命令的别名和颜色](/linux/bash-alias-color)
+- [修改语言](/linux/change-lang)
+- [Debian apt 换源](/linux/debian-source)
+- [时区设置](/linux/local-rtc)
+- [删除 Gnome 应用](/linux/remove-gnome-apps)
+- [移除旧内核](/linux/remove-old)
+- [删除 Snap 软件包](/linux/remove-snap)
+- [修改 tty/ssh 显示信息](/linux/server-motd)
+- [配置 SSH](/linux/ssh-settings)
+- [SSH连接时更换为中文](/linux/ssh-zh_cn)
+- [安装中文字体](/linux/install-chsfonts)
+- [启用 sudo 权限](/linux/sudo-user)
+- [启用 Tab 补全](/linux/tab-completion)
