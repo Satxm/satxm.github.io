@@ -98,7 +98,6 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 ::: code-group
 ```vim [sources.list 格式]
-
 # 默认注释了源码仓库，如有需要可自行取消注释
 deb http://mirrors.ustc.edu.cn/debian bullseye main contrib non-free
 # deb-src http://mirrors.ustc.edu.cn/debian bullseye main contrib non-free

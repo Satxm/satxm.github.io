@@ -1,7 +1,5 @@
 # 删除 Gnome 应用
 
-## Gnome 软件列表
-
 ### 1、Gnome 游戏
 
 ```bash

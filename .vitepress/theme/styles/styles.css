@@ -9,6 +9,7 @@
 
 :root {
   --vp-font-family-base: 'LXGW WenKai', sans-serif;
+  --vp-font-family-mono: 'Inconsolata', 'LXGW WenKai', sans-serif;
   --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -32,10 +33,6 @@ img[src='/search.png'] {
 
 body {
   font-family: 'LXGW WenKai', sans-serif;
-}
-
-code {
-  font-family: 'Inconsolata', 'LXGW WenKai', sans-serif;
 }
 
 .VPNavBarTitle {

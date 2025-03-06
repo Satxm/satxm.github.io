@@ -20,7 +20,15 @@ export default {
   base: '/',
   markdown: {
     image: {
-      lazyLoading: true
+      lazyLoading: true,
+    },
+    math: true,
+    container: {
+      tipLabel: '提示',
+      warningLabel: '警告',
+      dangerLabel: '危险',
+      infoLabel: '信息',
+      detailsLabel: '详情'
     },
   },
   themeConfig: {
@@ -29,10 +37,10 @@ export default {
     sidebar: sidebar,
     outline: {
       label: '页面导航',
-      deep: [2, 4],
+      level: [2, 4],
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/satxm' }
+      { icon: 'github', link: 'https://github.com/satxm' },
     ],
     search: {
       provider: 'local',

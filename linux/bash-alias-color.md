@@ -5,13 +5,12 @@
 让 Debian 支持 ll 等命令的别名，需要修改用户目录下面的.bashrc 配置文件
 
 ```bash
-cd ~  #进入当前用户目录
-vim .bashrc  #使用vim 编辑.bashrc配置文件
+vim ~\.bashrc  #使用vim 编辑.bashrc配置文件
 ```
 
 找到这样几行 
 
-```v
+```v [~\.bashrc]
 # some more ls aliases
 #alias ll='ls -l' // [!code --]
 #alias la='ls -A' // [!code --]
@@ -24,12 +23,16 @@ alias l='ls -CF' // [!code ++]
 执行 `source` 命令重新载入 `bashrc`
 
 ```bash
-source .bashrc
+source ~\.bashrc
 ```
 
 ## 启用命令行颜色
 
-找到这样几行 
+让 Debian 支持 ll 等命令的颜色输出，需要修改用户目录下面的.bashrc 配置文件
+
+```bash
+vim ~\.bashrc  #使用vim 编辑.bashrc配置文件
+```
 
 ::: code-group
 
@@ -71,3 +74,9 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01' // [!code ++]
 ```
 :::
+
+执行 `source` 命令重新载入 `bashrc`
+
+```bash
+source ~\.bashrc
+```

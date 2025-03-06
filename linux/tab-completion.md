@@ -1,12 +1,12 @@
 # 启用 Tab 补全
 
-## 1、安装 `bash-completion` 软件包
+1、安装 `bash-completion` 软件包
 
 ```bash
 sudo apt install bash-completion
 ```
 
-## 2、修改 `/etc/bash.bashrc` 文件（需要root权限）或 `~/.bashrc` 文件
+2、修改 `/etc/bash.bashrc` 文件（需要root权限，全局）或 `~/.bashrc` 文件
 
 ::: code-group
 
@@ -41,7 +41,7 @@ fi // [!code ++]
 ```
 :::
 
-### 3、最后 source 重载 `/etc/bash.bashrc` 文件或用户目录 `.bashrc` 文件
+3、最后 source 重载 `/etc/bash.bashrc` 文件或用户目录 `.bashrc` 文件
 
 ```bash
 source /etc/bash.bashrc
