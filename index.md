@@ -1,13 +1,16 @@
 ---
 layout: home
 
-title: Satxm's Docs
-titleTemplate: 使用 VitePress 搭建的 Docs
+title: Satxm's Book
+titleTemplate: 书写你的精彩史诗！
 
 hero:
-  name: "Satxm's Docs"
-  text: "使用 VitePress 搭建的 Docs"
-  tagline: <p id="hitokoto">忘掉拥有过的花，去种有结果的树。</p>
+  name: Satxm's Book
+  text: 书写你的精彩史诗！
+  tagline: 忘掉拥有过的花，去种有结果的树。
+  image:
+      src: /imgs/home-logo.svg
+      alt: Satxm's Book
   actions:
     - theme: alt
       text: Linux
@@ -24,23 +27,20 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/satxm/satxm.github.io
-  image:
-      src: /imgs/home-logo.svg
-      alt: Satxm's Docs
 
 features:
   - icon: 📝
-    title: 专注内容
-    details: 只需 Markdown 即可轻松创建美观的文档站点。
+    title: 记录内容
+    details: 人生中处处是内容，使用 Markdown 记录你的精彩。
+  - icon: 📖
+    title: 深入学习
+    details: 深入学习，不断阅读，学习巩固各类知识与技巧。
   - icon: 🧊
-    title: 享受 Vite 无可比拟的体验
-    details: 服务器即时启动，闪电般的热更新，还可以使用基于 Vite 生态的插件。
-  - icon: 🗺️
-    title: 使用 Vue 自定义
-    details: 直接在 Markdown 中使用 Vue 语法和组件，或者使用 Vue 组件构建自定义主题。
+    title: 外出实践
+    details: 去践行，去汲取经验，将之吸收转化为你的养分。
   - icon: 🚀
-    title: 速度真的很快！
-    details: 采用静态 HTML 实现快速的页面初次加载，使用客户端路由实现快速的页面切换导航。
+    title: 创造未来
+    details: 预测未来的最好方法，就是去创造你的辉煌未来。
 ---
 
 

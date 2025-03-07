@@ -2,34 +2,6 @@
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
-
-/**
- * Colors
- *
-  每种颜色都有完全相同的色标系统，有3个级别的实体，具有不同亮度的颜色和1种浅颜色。
-*
- * 
- * - `XXX-1`: 主要用于彩色文本的最纯色。它必须当在“XXX soft”之上使用时
- *
- * - `XXX-2`: 主要用于按钮悬停状态的颜色.
- *
- * - `XXX-3`: 实心背景的颜色，例如按钮的背景颜色。
- *
- * - `XXX-soft`: 用于soft背景（如自定义容器）的颜色
- *
-  soft颜色必须是半透明的alpha通道。这一点至关重要,因为它允许在彼此之上添加多种soft颜色
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attched to it such as bg color for menu hover state.
- *
- * - `brand`: 用于主品牌颜色，如链接文本、按钮.
- *
- * - `tip`: 用于表示有用的信息。默认主题使用
- *
- * - `warning`:用于向用户发出警告。用于自定义.
- *
- * - `danger`:用于向用户显示错误或危险消息。习惯于,在定制的容器、徽章等中.
- * -------------------------------------------------------------------------- */
 /**
  * Colors
  * -------------------------------------------------------------------------- */

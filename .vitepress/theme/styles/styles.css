@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-fz-hei-b-01-regular/font.css');
 @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont/style.css');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Oleo+Script:wght@400;700&display=swap');
+
 @import './blockquote.css';
 @import './custom-block.css';
 @import './rainbow.css';
@@ -10,35 +9,19 @@
 :root {
   --vp-font-family-base: 'LXGW WenKai', sans-serif;
   --vp-font-family-mono: 'Inconsolata', 'LXGW WenKai', sans-serif;
-  --vp-home-hero-image-filter: blur(44px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-
-/* used in reference/default-theme-search */
-img[src='/search.png'] {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-body {
-  font-family: 'LXGW WenKai', sans-serif;
 }
 
 .VPNavBarTitle {
   font-family: 'Oleo Script';
 }
 
-.name {
-  font-family: 'Oleo Script';
+.VPHomeHero {
+  .name {
+    font-family: 'Oleo Script';
+  }
+
+  .text {
+    line-height: 64px;
+    font-size: 36px;
+  }
 }

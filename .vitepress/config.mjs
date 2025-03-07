@@ -4,8 +4,8 @@ import sidebar from './config/sidebar';
 
 export default {
   lang: 'zh-CN',
-  title: "Satxm's Docs",
-  description: "使用 VitePress 搭建的 Docs",
+  title: "Satxm's Book",
+  description: "书写你的精彩史诗！",
   head: [
     ['meta', { name: 'author', content: "Satxm" }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' }],
@@ -13,7 +13,6 @@ export default {
     ['link', { rel: 'icon', type: 'image/png', href: '/imgs/logo-mini.png' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/imgs/logo-mini.svg' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['script', { src: 'https://v1.hitokoto.cn/?encode=js&select=%23hitokoto' }],
   ],
   lastUpdated: true,
   cleanUrls: true,
@@ -83,7 +82,7 @@ export default {
     },
     footer: {
       message: '基于 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可发布',
-      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/">VitePress</a> \& <a href="https://hitokoto.cn/">Hitokoto</a> 强力驱动`
+      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/">VitePress</a> 强力驱动`
     },
     returnToTopLabel: "回到顶部",
     sidebarMenuLabel: "菜单",
