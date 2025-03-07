@@ -1,6 +1,7 @@
 export default [
   {
     text: 'Linux',
+    link: '/linux',
     items: [
       { text: '启用命令的别名和颜色', link: '/linux/bash-alias-color' },
       { text: '修改语言', link: '/linux/change-lang' },
@@ -19,6 +20,7 @@ export default [
   },
   {
     text: 'Windows',
+    link: '/windows',
     items: [
       { text: '删除右键菜单的 AMD 项目', link: '/windows/remove-amd' },
       { text: '在登录界面隐藏用户', link: '/windows/win-hide' },
@@ -27,6 +29,7 @@ export default [
   },
   {
     text: 'Docker',
+    link: '/docker',
     items: [
       { text: '安装 Docker', link: '/docker/install-docker' },
       { text: 'Daocker 镜像', link: '/docker/docker-imgs' },
@@ -34,6 +37,7 @@ export default [
   },
   {
     text: 'Software',
+    link: '/software',
     items: [
       { text: 'Git 设置', link: '/software/git-usage' },
       { text: 'Git 命令', link: '/software/git-cmd' },
