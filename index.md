@@ -7,7 +7,7 @@ titleTemplate: 书写你的精彩史诗！
 hero:
   name: Satxm's Book
   text: 书写你的精彩史诗！
-  tagline: 忘掉拥有过的花，去种有结果的树。
+  tagline: <p id="hitokoto">忘掉拥有过的花，去种有结果的树。 -「<strong> 网络 </strong>」</p>
   image:
       src: /imgs/home-logo.svg
       alt: Satxm's Book
