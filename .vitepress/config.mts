@@ -1,5 +1,7 @@
 import { defineConfig } from "vitepress";
 import { sidebar, nav, head } from "./configs";
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
+
 export default defineConfig({
   title: "Satxm's Book",
   description: "书写你的精彩史诗！",
@@ -19,6 +21,9 @@ export default defineConfig({
       dangerLabel: "危险",
       infoLabel: "信息",
       detailsLabel: "详情",
+    },
+    config(md) {
+      md.use(tabsMarkdownPlugin)
     },
   },
   themeConfig: {

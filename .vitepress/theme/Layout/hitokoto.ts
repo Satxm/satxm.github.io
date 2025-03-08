@@ -1,5 +1,5 @@
 export function hitokoto() {
-const xhr: XMLHttpRequest = new XMLHttpRequest();
+  const xhr: XMLHttpRequest = new XMLHttpRequest();
   xhr.onreadystatechange = function (): void {
     if (this.readyState === 4 && this.status === 200) {
       const res: { hitokoto: string; from: string } = JSON.parse(this.responseText);
