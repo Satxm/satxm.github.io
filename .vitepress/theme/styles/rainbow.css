@@ -664,9 +664,3 @@
   --vp-c-brand-2: var(--vp-c-brand-darker);
   animation: rainbow 60s linear infinite;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    animation: none !important;
-  }
-}

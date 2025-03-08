@@ -1,0 +1,51 @@
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+:root {
+  /* 全局字体 */
+  --vp-font-family-base: 'LXGW WenKai', sans-serif;
+  --vp-font-family-mono: 'Inconsolata', 'LXGW WenKai', sans-serif;
+}
+
+/* 首页样式修改 */
+.VPHomeHero {
+  .image-bg {
+    /* 修改图片样式 */
+    opacity: 0.8;
+    transition: opacity 1s ease;
+  }
+
+  .name {
+    /* 修改站点字体 */
+    font-family: 'Oleo Script';
+  }
+
+  .text {
+    /* 修改文案样式 */
+    line-height: 64px;
+    font-size: 36px;
+  }
+}
+
+.VPNavBarTitle {
+  /* 修改站点字体 */
+  font-family: 'Oleo Script';
+}
+
+/* 自定义块样式 */
+.custom-block .custom-block-title {
+  font-size: 16px;
+}
