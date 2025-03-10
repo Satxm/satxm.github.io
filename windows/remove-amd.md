@@ -2,7 +2,6 @@
 
 <center>
 <img src="/imgs/1671064733303.webp" width=250/>
-<img src="/imgs/1671065556009.webp" width=200/>
 </center>
 
 ## 查找 AMD 应用 ID

@@ -6,12 +6,7 @@
 ## 输出内核信息
 
 ```bash
-sudo vim /etc/update-motd.d/00-header 
-sudo chmod +x /etc/update-motd.d/00-header
-```
-
-```vim
-#!/bin/sh
+echo '#!/bin/sh
 
 [ -r /etc/lsb-release ] && . /etc/lsb-release
 
@@ -22,6 +17,8 @@ if [ -x /usr/bin/lsb_release ]; then
 fi
 
 printf "Welcome to %s %s (%s %s %s)\n" "$LSBI" "$LSBR" "$(uname -o)" "$(uname -r)" "$(uname -m)"
+' | sudo tee /etc/update-motd.d/00-header
+sudo chmod +x /etc/update-motd.d/00-header
 ```
 
 输出结果（以 Debian 12 为示例）

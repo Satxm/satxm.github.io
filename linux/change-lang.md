@@ -8,9 +8,12 @@ sudo vim /etc/locale.gen
 
 添加以下内容或取消以下内容前注释符号，之后运行 `sudo locale-gen` 重新生成语言
 
-```vim
-en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
+```v
+# en_US.UTF-8 UTF-8 // [!code --]
+en_US.UTF-8 UTF-8 // [!code ++]
+
+# zh_CN.UTF-8 UTF-8 // [!code --]
+zh_CN.UTF-8 UTF-8 // [!code ++]
 ``` 
 
 修改 `/etc/default/locale` 文件，按需修改

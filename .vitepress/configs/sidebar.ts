@@ -13,7 +13,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "删除 Gnome 应用", link: "/linux/remove-gnome-apps" },
         { text: "移除旧内核", link: "/linux/remove-old" },
         { text: "删除 Snap 软件包", link: "/linux/remove-snap" },
-        { text: "修改 tty/ssh 显示信息", link: "/linux/server-motd" },
+        { text: "修改 tty/ssh 显示信息", link: "/linux/linux-motd" },
         { text: "配置 SSH", link: "/linux/ssh-settings" },
         { text: "SSH连接时更换为中文", link: "/linux/ssh-zh_cn" },
         { text: "安装中文字体", link: "/linux/install-chsfonts" },

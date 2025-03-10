@@ -7,7 +7,7 @@
 - [删除 Gnome 应用](/linux/remove-gnome-apps)
 - [移除旧内核](/linux/remove-old)
 - [删除 Snap 软件包](/linux/remove-snap)
-- [修改 tty/ssh 显示信息](/linux/server-motd)
+- [修改 tty/ssh 显示信息](/linux/linux-motd)
 - [配置 SSH](/linux/ssh-settings)
 - [SSH连接时更换为中文](/linux/ssh-zh_cn)
 - [安装中文字体](/linux/install-chsfonts)
