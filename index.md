@@ -7,7 +7,7 @@ titleTemplate: 书写你的精彩史诗！
 hero:
   name: Satxm's Book
   text: 书写你的精彩史诗！
-  tagline: <p id="hitokoto">忘掉拥有过的花，去种有结果的树。 -「<strong> 网络 </strong>」</p>
+  tagline: 路为纸，地成册，行做笔，心当墨。
   image:
       src: /imgs/home-logo.svg
       alt: Satxm's Book
@@ -29,18 +29,18 @@ hero:
       link: https://github.com/satxm/satxm.github.io
 
 features:
-  - icon: 📝
-    title: 记录内容
-    details: 人生中处处是内容，使用 Markdown 记录你的精彩。
+  - icon: ⭐
+    title: 明目视己
+    details: 只有用心灵才能看得清事物本质，真正重要的东西是肉眼无法看见的。
   - icon: 📖
-    title: 深入学习
-    details: 深入学习，不断阅读，学习巩固各类知识与技巧。
+    title: 不负时光
+    details: 我们一路奋战，不是为了改变世界，而是为了不让世界改变我们。
   - icon: 🧊
-    title: 外出实践
-    details: 去践行，去汲取经验，将之吸收转化为你的养分。
-  - icon: 🚀
-    title: 创造未来
-    details: 预测未来的最好方法，就是去创造你的辉煌未来。
+    title: 时过境迁
+    details: 很多事情犹如天气，慢慢热或是渐渐冷，等到惊悟的时候，已过了一季。
+  - icon: 📝
+    title: 虑无益果
+    details: 为什么要担心？如果努力了，担心不会让结果变得更好。
 ---
 
 
