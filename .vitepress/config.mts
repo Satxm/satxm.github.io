@@ -75,8 +75,8 @@ export default defineConfig({
       next: "下一篇",
     },
     footer: {
-      message: '基于 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可发布',
-      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/">VitePress</a> & <a href="https://hitokoto.cn/">Hitokoto</a> 强力驱动`,
+      message: `基于 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> 许可发布`,
+      copyright: `版权所有 © ${new Date().getFullYear()} <a href="https://github.com/Satxm">Satxm</a>. 由 <a href="https://vitepress.dev/zh/">VitePress</a> & <a href="https://developer.hitokoto.cn/">一言</a> 强力驱动`,
     },
     returnToTopLabel: "回到顶部",
     sidebarMenuLabel: "菜单",
