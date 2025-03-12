@@ -7,4 +7,5 @@ export const head: HeadConfig[] = [
     ['link', { rel: 'icon', type: 'image/png', href: '/imgs/logo-mini.png' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/imgs/logo-mini.svg' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['script', { src: '/js/hitokoto.js' }],
 ]

@@ -7,7 +7,7 @@ titleTemplate: 书写你的精彩史诗！
 hero:
   name: Satxm's Book
   text: 书写你的精彩史诗！
-  tagline: 路为纸，地成册，行做笔，心当墨。
+  tagline: <span id="hitokoto">路为纸，地成册，行做笔，心当墨。 -「<strong> CCTV9 </strong>」</span>
   image:
       src: /imgs/home-logo.svg
       alt: Satxm's Book
@@ -42,6 +42,3 @@ features:
     title: 虑无益果
     details: 为什么要担心？如果努力了，担心不会让结果变得更好。
 ---
-
-
-
