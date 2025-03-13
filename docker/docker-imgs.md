@@ -2,9 +2,9 @@
 
 ## [Dpanel](https://dpanel.cc/#/zh-cn/install/docker)
 
-轻量化的 Docker 可视化管理面板，提供完善的容器管理功能。
+轻量化的 Docker 可视化管理面板，提供完善的容器管理功能。容器运行后使用浏览器访问`http://<server-ip>:8080`端口。
 
-::: code-group
+:::: code-group
 
 ```bash [Docker Run]
 docker run -d --name dpanel --restart=always \
@@ -25,18 +25,24 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./dpanel:/dpanel
+      - ..:/dpanel/compose
+```
+::::
+
+## [Nginx 代理管理器（中文版）](https://github.com/xiaoxinpro/nginx-proxy-manager-zh)
+
+[英文官方网站](https://nginxproxymanager.com/)
+
+它可以让你轻松地部署到你的网站上运行，包括免费的SSL，而不需要知道太多关于 Nginx 或 Let's Encrypt 的信息。容器运行后使用浏览器访问`http://<server-ip>:81`端口。
+
+默认管理员信息:
+
+```
+邮箱: admin@example.com
+密码: changeme
 ```
 
-:::
-
-## [nginx-proxy-manager-zh](https://github.com/xiaoxinpro/nginx-proxy-manager-zh)
-
-[官方网站](https://nginxproxymanager.com/)
-
-它可以让你轻松地部署到你的网站上运行，包括免费的SSL，而不需要知道太多关于 Nginx 或 Let's Encrypt 的信息。
-
-
-::: code-group
+:::: code-group
 
 ```bash [Docker Run]
 docker run -d --name nginx-proxy-manager --restart=always \
@@ -46,10 +52,9 @@ chishin/nginx-proxy-manager-zh:latest
 ```
 
 ```yml [Compose]
-version: '3'
 services:
   nginx-proxy-manager:
-    container_name: dpanel
+    container_name: nginx-proxy-manager
     image: 'chishin/nginx-proxy-manager-zh:release'
     restart: always
     network_mode: host
@@ -57,22 +62,46 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
 ```
+::::
 
-::: 
+## [迅雷远程下载（非官方）](https://github.com/cnk3x/xunlei)
 
-## xunlei
+从迅雷群晖套件中提取出来用于其他设备的迅雷远程下载服务程序。
 
-```bash
+:::: code-group
+
+```bash [Docker Run]
 docker run -d --restart=always --name=xunlei --net=host \
 -e XL_DASHBOARD_PORT=8091 \
 -v /var/docker/xunlei/data:/xunlei/data \
--v /var/media:/xunlei/downloads --privileged \
+-v /var/media:/xunlei/downloads \
+-v /var/media:/xunlei/media \
+--privileged \
 cnk3x/xunlei:latest
 ```
 
-## qbittorrent
+```yml [Compose]
+services:
+  xunlei:
+    image: cnk3x/xunlei:latest
+    container_name: xunlei
+    restart: always
+    network_mode: host 
+    privileged: true
+    volumes:
+      - './data:/xunlei/data'
+      - '/var/downloads:/xunlei/downloads'
+      - '/var/media:/xunlei/media'
+    environment:
+      - 'XL_DASHBOARD_PORT=8091'
+```
+::::
 
-```bash
+## [qbittorrent](https://github.com/linuxserver/docker-qbittorrent)
+
+:::: code-group
+
+```bash [Docker Run]
 docker run -d --restart=always --name=qbittorrent --net=host \
 -e PUID=0 -e PGID=0 -e TZ=Asia/ShangHai -e WEBUI_PORT=8090 \
 -v /var/docker/qbittorrent/config:/config \
@@ -80,9 +109,32 @@ docker run -d --restart=always --name=qbittorrent --net=host \
 linuxserver/qbittorrent:latest
 ```
 
-## jellyfin
+```yml [Compose]
+services:
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    restart: always
+    network_mode: host
+    environment:
+      - 'PUID=1000'
+      - 'PGID=1000'
+      - 'TZ=Asia/ShangHai'
+      - 'WEBUI_PORT=8090'
+    volumes:
+      - './config:/config'
+      - '/var/downloads:/downloads'
+      - '/var/media:/media'
+```
+::::
 
-::: code-group
+## [Jellyfin](https://jellyfin.org/docs/general/installation/container/)
+
+Jellyfin 是一个免费软件媒体系统，可让您控制管理和流式传输您的媒体。
+
+容器运行后使用浏览器访问`http://<server-ip>:8096`端口。
+
+:::: code-group
 
 ```bash [Docker Run]
 docker run -d --restart=always --name=jellyfin --net=host \
@@ -104,10 +156,11 @@ jellyfin/jellyfin:latest
 
 
 ```yml [Compose]
-version: '3'
 services:
   jellyfin:
+    container_name: jellyfin
     image: 'jellyfin/jellyfin:latest'
+    restart: always
     network_mode: host
     extra_hosts:
       - 'www.themoviedb.org:3.166.244.31'
@@ -124,10 +177,8 @@ services:
       - '/var/media:/media'
       - './config:/config'
       - './cache:/cache'
-    container_name: jellyfin
-    restart: always
 ```
-:::
+::::
 
 ## waline
 

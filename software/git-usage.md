@@ -17,7 +17,7 @@ git config --global user.email <email> # 全局配置
 许多 Git 服务器都使用 SSH 公钥进行认证。
 首先，你需要确认自己是否已经拥有密钥。默认情况下，用户的 SSH 密钥存储在其 `~/.ssh`(Linux) 或`%USERPROFILE%\.ssh`(Widows) 目录下。进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：
 
-::: code-group
+:::: code-group
 
 ```bash [Linux]
 cd ~/.ssh
@@ -34,7 +34,7 @@ id_rsa
 id_rsa.pub
 known_hosts
 ```
-:::
+::::
 
 我们需要寻找一对以 `id_dsa` 或 `id_rsa` 命名的文件，其中一个带有 `.pub` 扩展名。`.pub` 文件是你的公钥，另一个则是与之对应的私钥。如果找不到这样的文件（或者根本没有 `.ssh` 目录），你可以通过运行 `ssh-keygen` 程序来创建它们。
 
@@ -55,7 +55,7 @@ Your public key has been saved in /root/.ssh/id_rsa.pub # 公钥位置
 
 ## 代理
 
-::: code-group
+:::: code-group
 ```bash [设置代理]
 # 全局配置
 git config --global http.proxy <ip>:<port> / <proxy_url>
@@ -75,4 +75,4 @@ git config --global --unset https.proxy
 git config --local --unset http.proxy
 git config --local --unset https.proxy
 ```
-:::
+::::

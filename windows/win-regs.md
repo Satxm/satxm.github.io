@@ -2,7 +2,7 @@
 
 ## 桌面图标
 
-::: code-group
+:::: code-group
 ```reg [Registry]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
 ; 桌面显示计算机
@@ -38,11 +38,11 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcon
 :: 桌面显示 OneDrive
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v {018D5C66-4533-4307-9B53-224DE2ED1FE6} /t REG_DWORD /d 0 /f
 ```
-:::
+::::
 
 ## UAC 设置
 
-::: code-group
+:::: code-group
 ```reg [Registry]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 ; UAC 通知强度级别
@@ -63,7 +63,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "Ena
 :: UAC 桌面是否变黑
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "PromptOnSecureDesktop" /t REG_DWORD /d 0 /f
 ```
-:::
+::::
 
 注册表项设置
 

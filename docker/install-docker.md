@@ -15,7 +15,7 @@ sudo apt install ca-certificates curl gnupg
 
 ## 添加 Docker GPG 公钥和仓库
 
-::: code-group
+:::: code-group
 
 ```bash [mirrors.ustc.edu.cn]
 install -m 0755 -d /etc/apt/keyrings
@@ -49,7 +49,7 @@ echo \
 "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
 sudo tee /etc/apt/sources.list.d/docker-ce.list > /dev/null
 ```
-:::
+::::
 
 
 ## 安装 Docker
