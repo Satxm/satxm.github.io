@@ -2,15 +2,15 @@
 
 ## 使用说明 {#1}
 
-::: warning 警告
+:::: warning 警告
 **操作前请做好相应备份。**
-:::
+::::
 
 一般情况下，将 `/etc/apt/sources.list` 或 `/etc/apt/sources.list.d/debian.sources` 文件中 Debian 默认的源地址 `http://deb.debian.org/` 替换为 `http://mirrors.ustc.edu.cn` 即可。
 
 可以使用如下命令：
 
-::: code-group
+:::: code-group
 
 ```bash [sources.list 格式]
 sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
@@ -23,11 +23,11 @@ sudo sed -i -e 's|security.debian.org/\? |security.debian.org/debian-security |g
 ```bash [DEB822 格式]
 sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
 ```
-:::
+::::
 
 目前使用 DEB822 格式的 Debian 分发仅有容器镜像，且其安全更新源默认设置为 `http://deb.debian.org/debian-security`，因此以上命令会同时替换 Debian 官方源和安全更新源。
 
-::: tip 提示
+:::: tip 提示
 
 [什么是 DEB822 (.sources) 文件格式？]
 
@@ -56,13 +56,13 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 关于 DEB822 格式的设计考虑，可以参考[官方文档（英文）](https://repolib.readthedocs.io/en/latest/deb822-format.html)。
 
-:::
+::::
 
 当然也可以直接编辑 APT 源文件（需要使用 sudo）。以下是参考配置内容：
 
 ## Debian 12 {#2}
 
-::: code-group
+:::: code-group
 ```vim [sources.list 格式]
 # 默认注释了源码仓库，如有需要可自行取消注释
 deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
@@ -92,11 +92,11 @@ Suites: bookworm-security
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 ```
-:::
+::::
 
 ## Debian 11 {#3}
 
-::: code-group
+:::: code-group
 ```vim [sources.list 格式]
 # 默认注释了源码仓库，如有需要可自行取消注释
 deb http://mirrors.ustc.edu.cn/debian bullseye main contrib non-free
@@ -126,4 +126,4 @@ Suites: bullseye-security
 Components: main contrib non-free
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 ```
-:::
+::::

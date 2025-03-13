@@ -5,12 +5,12 @@
 让 Debian 支持 ll 等命令的别名，需要修改用户目录下面的.bashrc 配置文件
 
 ```bash
-vim ~\.bashrc  #使用vim 编辑.bashrc配置文件
+vim ~/.bashrc
 ```
 
 找到这样几行 
 
-```v [~\.bashrc]
+```v [~/.bashrc]
 # some more ls aliases
 #alias ll='ls -l' // [!code --]
 #alias la='ls -A' // [!code --]
@@ -23,7 +23,7 @@ alias l='ls -CF' // [!code ++]
 执行 `source` 命令重新载入 `bashrc`
 
 ```bash
-source ~\.bashrc
+source ~/.bashrc
 ```
 
 ## 启用命令行颜色
@@ -31,10 +31,10 @@ source ~\.bashrc
 让 Debian 支持 ll 等命令的颜色输出，需要修改用户目录下面的.bashrc 配置文件
 
 ```bash
-vim ~\.bashrc  #使用vim 编辑.bashrc配置文件
+vim ~/.bashrc
 ```
 
-::: code-group
+:::: code-group
 
 ```v [Root]
 # You may uncomment the following lines if you want `ls' to be colorized:
@@ -63,7 +63,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias grep='grep --color=auto' // [!code --]
     #alias fgrep='fgrep --color=auto' // [!code --]
     #alias egrep='egrep --color=auto' // [!code --]
-
     alias grep='grep --color=auto' // [!code ++]
     alias fgrep='fgrep --color=auto' // [!code ++]
     alias egrep='egrep --color=auto' // [!code ++]
@@ -73,10 +72,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01' // [!code --]
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01' // [!code ++]
 ```
-:::
+::::
 
 执行 `source` 命令重新载入 `bashrc`
 
 ```bash
-source ~\.bashrc
+source ~/.bashrc
 ```

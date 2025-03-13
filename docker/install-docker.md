@@ -15,50 +15,51 @@ sudo apt install ca-certificates curl gnupg
 
 ## 添加 Docker GPG 公钥和仓库
 
-::: code-group
+:::: code-group
 
-```bash [mirrors.ustc.edu.cn]
+```bash [Debian/Ubuntu]
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker-ce.gpg
 sudo chmod a+r /etc/apt/keyrings/docker-ce.gpg
 
+# docker-ce.list
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker-ce.gpg] https://mirrors.ustc.edu.cn/docker-ce/linux/debian \
 "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
 sudo tee /etc/apt/sources.list.d/docker-ce.list > /dev/null
+
+# docker-ce.sources(DEB822 格式)
+echo "Types: deb
+URIs: https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/
+Suites: "$(. /etc/os-release && echo "$VERSION_CODENAME")"
+Components: stable
+Signed-By: /etc/apt/keyrings/docker-ce.gpg
+" | sudo tee /etc/apt/sources.list.d/docker-ce.sources > /dev/null
 ```
 
-```bash [mirrors.tuna.tsinghua.edu.cn]
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker-ce.gpg
-sudo chmod a+r /etc/apt/keyrings/docker-ce.gpg
+```bash [Fedora/CentOS]
+sudo dnf install ndf-utils dnf-plugins-core -y
+sudo dnf config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/fedora/docker-ce.repo
 
-echo \
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
-"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-sudo tee /etc/apt/sources.list.d/docker-ce.list > /dev/null
+sudo sed -i 's|^baseurl=https://download.docker.com|baseurl=https://mirrors.ustc.edu.cn/docker-ce|g' /etc/yum.repos.d/docker-ce.repo
 ```
-
-```bash [mirrors.aliyun.com]
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker-ce.gpg
-sudo chmod a+r /etc/apt/keyrings/docker-ce.gpg
-
-echo \
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker-ce.gpg] https://mirrors.aliyun.com/docker-ce/linux/debian \
-"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-sudo tee /etc/apt/sources.list.d/docker-ce.list > /dev/null
-```
-:::
+::::
 
 
 ## 安装 Docker
 
-```bash
+:::: code-group
+
+```bash [Debian/Ubuntu]
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
+```bash [Fedora/CentOS]
+sudo dnf update
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+```
+::::
 ## 添加 Docker 镜像源
 
 ```bash

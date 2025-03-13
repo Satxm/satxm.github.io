@@ -3,9 +3,26 @@
 
 ## 方法一：直接加入 sudo 用户组
 
+为了防止出现 `bash: usermod: command not found` 或 `bash: usermod: 未找到命令` 错误，需要用 `su - root` 或 `su -` 命令切换到 `root` 命令，`su -` 命令能获取 `root` 用户的环境变量，才能使用 `usermod` 指令。
+
 ```bash
+su -
 usermod -aG sudo <user>
 ```
+
+:::: tip
+
+`su` 命令和 `su -` 命令区别：
+
+`su` 只是切换了 `root` 用户身份，但 Shell 环境仍然是之前普通用户的 Shell；
+
+而 `su -` 连用户身份和 Shell 环境一起切换成 `root` 用户身份了。
+
+只有切换了 Shell 环境才不会出现环境变量错误，报 `command not found` 或 `未找到命令` 错误。
+
+用 `echo $PATH` 命令看一下 `su` 和 `su -` 后的环境变量已经变了。
+
+::::
 
 ## 方法二：编辑 `/etc/sudoers` 文件
 

@@ -8,7 +8,7 @@ sudo apt install bash-completion
 
 2、修改 `/etc/bash.bashrc` 文件（需要root权限，全局）或 `~/.bashrc` 文件
 
-::: code-group
+:::: code-group
 
 ```v [/etc/bash.bashrc]
 # enable bash completion in interactive shells
@@ -39,7 +39,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then // [!code ++]
     . /etc/bash_completion // [!code ++]
 fi // [!code ++]
 ```
-:::
+::::
 
 3、最后 source 重载 `/etc/bash.bashrc` 文件或用户目录 `.bashrc` 文件
 

@@ -1,9 +1,10 @@
 
 # 修改 tty/ssh 显示信息
 
-`/etc/update-motd.d/` 目录下，数字越小运行越早，该目录下可输出系统信息、输出内核信息、运行自定义脚本等
 
 ## 输出内核信息
+
+`/etc/update-motd.d/` 目录下，数字越小运行越早，该目录下可输出系统信息、输出内核信息、运行自定义脚本等
 
 ```bash
 echo '#!/bin/sh
@@ -27,10 +28,47 @@ sudo chmod +x /etc/update-motd.d/00-header
 Welcome to Debian 12 (GNU/Linux 6.1.0-23-amd64 x86_64)
 ```
 
+## 显示用户自定义信息
+
+`/etc/profile.d/motd.sh` 目录下，数字越小运行越早，该目录下可输出系统信息、输出内核信息、运行自定义脚本等
+
+```bash
+echo '#!/bin/sh
+
+[ -r /etc/lsb-release ] && . /etc/lsb-release
+
+if [ -x /usr/bin/lsb_release ]; then
+        # Fall back to using the very slow lsb_release utility
+        LSBI=$(lsb_release -s -i)
+        LSBR=$(lsb_release -s -r)
+fi
+
+echo -e "
+# Welcome to \033[1;36m`hostname -s`,\033[0m you are logged in as \033[1;20m`whoami`\033[0m
+# This system is running \033[1;32m$LSBI $LSBR\033[0m (\033[1;33m`uname -o` `uname -r` `uname -m`\033[0m)
+"' | sudo tee /etc/profile.d/motd.sh > /dev/null
+sudo chmod +x /etc/profile.d/motd.sh
+```
+
+输出结果（以 Debian 12 为示例）
+
+```bash
+# Welcome to Debian, you are logged in as root
+# This system is running Debian 12 (GNU/Linux 6.1.0-32-amd64 x86_64)
+```
+
 ## 修改自定义欢迎语
 
 修改 `/etc/motd` 文件，该文件不可运行脚本，仅输出文本
 
 ```bash 
-sudo vim /etc/motd
+echo "
+Welcome to $(lsb_release -s -i) ($(uname -o)) Server!
+" | sudo tee /etc/motd > /dev/null
+```
+
+输出结果（以 Debian 12 为示例）
+
+```bash
+Welcome to Debian (GNU/Linux) Server!
 ```
