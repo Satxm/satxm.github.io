@@ -57,6 +57,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "删除 Snap 软件包", link: "/software/remove-snap" },
         { text: "删除 Gnome 应用", link: "/software/remove-gnome-apps" },
         { text: "Gnome 更多缩放的支持", link: "/software/more-dpi" },
+        { text: "Gnome 桌面快捷方式相关", link: "/software/gnome-desktop" },
       ],
     },
   ],

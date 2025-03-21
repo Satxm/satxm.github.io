@@ -41,3 +41,13 @@ Signed-By: /etc/apt/keyrings/microsoft.gpg
 sudo apt update
 sudo apt install microsoft-edge-stable
 ```
+
+## 移除右上角 Copilot 按钮
+
+安装 Edge 后会有可能出现右上角 Copilot 按钮找不到关闭的选项，原因是 Edge 浏览器无法获取 `HubApps` 文件的数据，该文件在 Linux 上丢失。
+
+在 GitHub 上寻找到了答案 [Copolit & sidebar not working on linux](https://github.com/MicrosoftEdge/DevTools/issues/278#issuecomment-2557755365)：
+
+将 `HubApps` 文件从 Windows 安装复制到 Linux 就可以解决这个问题。
+
+本页提供一份 [`HubApps` 文件](/files/HubApps.json)，下载后去除文件后缀名并放入 `$HOME/.config/microsoft-edge/Default` 目录下，重新启动 Edge 浏览器便可在设置中禁用 Copilot 按钮。

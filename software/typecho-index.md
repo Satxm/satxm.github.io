@@ -69,7 +69,7 @@ nginx 配置
 server {
   listen      80;
   server_name   yourdomain.com;
-  root      /home/yourdomain/www/;
+  root      /yourdomain/www/;
   index       index.html index.htm index.php;
 
   if (!-e $request_filename) {
