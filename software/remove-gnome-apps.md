@@ -34,7 +34,8 @@ sudo apt autopurge
 ### 2、按需卸载
 
 ```bash
-sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-clocks gnome-contacts gnome-logs gnome-maps gnome-music gnome-software gnome-sound-recorder gnome-todo gnome-weather goldendict libreoffice* rhythmbox seahorse shotwell simple-scan synaptic totem transmission-gtk yelp zutty -y
+sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-clocks gnome-contacts gnome-logs gnome-maps gnome-music gnome-software gnome-sound-recorder gnome-todo gnome-weather goldendict libreoffice* rhythmbox seahorse shotwell simple-scan synaptic totem transmission-gtk yelp zutty thunderbird remmina usb-creator-common gnome-snapshot -y
+sudo apt autopurge
 ```
 
 以下内容看自己需求进行卸载
@@ -43,6 +44,7 @@ sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-c
 |:-------:|-------|
 |茄子|cheese|
 |Evolution（邮件）|evolution|
+|备份(Ubuntu)|deja-dup|
 |Firefox（*可选*）|firefox*|
 |计算器|gnome-calculator|
 |日历|gnome-calendar|
@@ -53,17 +55,22 @@ sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-c
 |地图|gnome-maps|
 |音乐|gnome-music|
 |软件|gnome-software|
+|相机(Ubuntu)|gnome-snapshot|
 |录音机|gnome-sound-recorder|
 |Endeavour (ToDo)|gnome-todo|
 |天气|gnome-weather|
 |GoldenDict（词典）|goldendict|
 |LibreOffice（*可选*）|libreoffice*|
+|Remmina（远程连接）(Ubuntu)|remmina|
 |Rhythmbox（音乐）|rhythmbox|
 |密码和密钥|seahorse|
 |Shotwell（照片管理）|shotwell|
 |文档扫描仪|simple-scan|
 |新立得软件包管理（*可选*）|synaptic|
+|Thunderbird（雷鸟邮件）(Ubuntu)|thunderbird|
 |视频|totem|
 |Transmission|transmission-gtk|
+|制作启动盘(Ubuntu)|usb-creator-common|
 |帮助（*可选*）|yelp|
 |Zutty|zutty|
+

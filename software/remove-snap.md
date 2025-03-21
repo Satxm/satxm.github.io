@@ -28,6 +28,12 @@ sudo snap remove --purge core22
 sudo snap remove --purge snapd
 ```
 
+或运行两次下列命令，出现报错不用管
+
+```bash
+for name in $(sudo snap list | awk 'NR>1 {print $1}');do sudo snap remove --purge $name; done
+```
+
 ## 3、最后，通过 apt 命令移除 Snap 服务
 
 ```bash

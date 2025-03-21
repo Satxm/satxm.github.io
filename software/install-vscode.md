@@ -18,11 +18,22 @@ sudo chmod a+r /etc/apt/keyrings/microsoft.gpg
 
 ## 添加存储库：
 
-```bash
+:::: code-group
+```bash [sources.list 格式]
 echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | \
 sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 ```
+
+```bash [DEB822 格式]
+echo 'Types: deb
+URIs: https://packages.microsoft.com/repos/code
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/microsoft.gpg
+' | sudo tee /etc/apt/sources.list.d/vscode.sources
+```
+::::
 
 ## 更新并安装 VSCode：
 
