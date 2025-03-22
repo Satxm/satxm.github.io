@@ -43,10 +43,11 @@ if [ -x /usr/bin/lsb_release ]; then
         LSBR=$(lsb_release -s -r)
 fi
 
-echo -e "
-# Welcome to \033[1;36m`hostname -s`,\033[0m you are logged in as \033[1;20m`whoami`\033[0m
-# This system is running \033[1;32m$LSBI $LSBR\033[0m (\033[1;33m`uname -o` `uname -r` `uname -m`\033[0m)
-"' | sudo tee /etc/profile.d/motd.sh > /dev/null
+printf "# Welcome to \033[1;36m%s,\033[0m you are logged in as \033[1;20m%s\033[0m\n" "$(hostname -s)" "$(whoami)"
+printf "# This system is running \033[1;32m%s %s\033[0m (\033[1;33m%s %s %s\033[0m)\n" "$LSBI" "$LSBR" "$(uname -o)" "$(uname -r)" "$(uname -m)"
+free -m | awk '\''NR==2 {printf "# Memory usage: \033[1;35m%.1fGB/%.1fGB %.2f%%\033[0m  ", $3/1000,$2/1000,$3*100/$2}'\''
+df -h | awk '\''$NF=="/" {printf "  Disk usage: \033[1;35m%.1fGB/%.1fGB %s\033[0m\n", $3,$2,$5}'\''
+' | sudo tee /etc/profile.d/motd.sh > /dev/null
 sudo chmod +x /etc/profile.d/motd.sh
 ```
 
