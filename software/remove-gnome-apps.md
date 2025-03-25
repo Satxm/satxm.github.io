@@ -9,7 +9,7 @@ sudo apt autopurge
 
 |应用|包名|
 |:-------:|-------|
-|GNOME 游戏（总称）|gnome-games|
+|GNOME 游戏(总称)|gnome-games|
 |AisleRiot 接龙游戏|aisleriot|
 |连珠消球|five-or-more|
 |四子连线|four-in-a-row|
@@ -34,7 +34,7 @@ sudo apt autopurge
 ### 2、按需卸载
 
 ```bash
-sudo apt purge cheese evolution firefox* gnome-calculator gnome-calendar gnome-clocks gnome-contacts gnome-logs gnome-maps gnome-music gnome-software gnome-sound-recorder gnome-todo gnome-weather goldendict libreoffice* rhythmbox seahorse shotwell simple-scan synaptic totem transmission-gtk yelp zutty thunderbird remmina usb-creator-common gnome-snapshot -y
+sudo apt purge cheese ... -y
 sudo apt autopurge
 ```
 
@@ -43,9 +43,10 @@ sudo apt autopurge
 |应用|包名|
 |:-------:|-------|
 |茄子|cheese|
-|Evolution（邮件）|evolution|
+|Evolution(邮件)|evolution|
 |备份(Ubuntu)|deja-dup|
-|Firefox（*可选*）|firefox*|
+|Firefox|firefox*|
+|连接（远程桌面）|gnome-connections|
 |计算器|gnome-calculator|
 |日历|gnome-calendar|
 |时钟|gnome-clocks|
@@ -55,22 +56,25 @@ sudo apt autopurge
 |地图|gnome-maps|
 |音乐|gnome-music|
 |软件|gnome-software|
-|相机(Ubuntu)|gnome-snapshot|
+|相机|gnome-snapshot*|
 |录音机|gnome-sound-recorder|
 |Endeavour (ToDo)|gnome-todo|
+|导览|gnome-tour|
 |天气|gnome-weather|
-|GoldenDict（词典）|goldendict|
-|LibreOffice（*可选*）|libreoffice*|
-|Remmina（远程连接）(Ubuntu)|remmina|
-|Rhythmbox（音乐）|rhythmbox|
+|GoldenDict(词典)|goldendict*|
+|LibreOffice|libreoffice*|
+|家长控制|malcontent|
+|高级网络编辑器|nm-connection-editor|
+|Remmina(远程连接)|remmina|
+|Rhythmbox(音乐)|rhythmbox|
 |密码和密钥|seahorse|
-|Shotwell（照片管理）|shotwell|
+|Shotwell(照片管理)|shotwell|
 |文档扫描仪|simple-scan|
-|新立得软件包管理（*可选*）|synaptic|
-|Thunderbird（雷鸟邮件）(Ubuntu)|thunderbird|
+|新立得软件包管理|synaptic|
+|Thunderbird(雷鸟邮件)(Ubuntu)|thunderbird|
 |视频|totem|
 |Transmission|transmission-gtk|
 |制作启动盘(Ubuntu)|usb-creator-common|
-|帮助（*可选*）|yelp|
+|帮助|yelp|
 |Zutty|zutty|
 

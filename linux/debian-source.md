@@ -82,7 +82,7 @@ deb http://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib n
 ```yaml [DEB822 格式]
 Types: deb
 URIs: http://mirrors.ustc.edu.cn/debian
-Suites: bookworm bookworm-updates
+Suites: bookworm bookworm-updates bookworm-backports
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
@@ -116,7 +116,7 @@ deb http://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib n
 ```yaml [DEB822 格式]
 Types: deb
 URIs: http://mirrors.ustc.edu.cn/debian
-Suites: bullseye bullseye-updates
+Suites: bullseye bullseye-updates bullseye-backports
 Components: main contrib non-free
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 

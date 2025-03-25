@@ -56,7 +56,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "安装 VSCode 编辑器", link: "/software/install-vscode" },
         { text: "删除 Snap 软件包", link: "/software/remove-snap" },
         { text: "删除 Gnome 应用", link: "/software/remove-gnome-apps" },
-        { text: "Gnome 更多缩放的支持", link: "/software/more-dpi" },
+        { text: "Gnome 分数缩放支持", link: "/software/fractional-scaling" },
         { text: "Gnome 桌面快捷方式相关", link: "/software/gnome-desktop" },
       ],
     },

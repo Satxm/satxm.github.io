@@ -9,5 +9,5 @@
 - [安装 VSCode 编辑器](/software/install-vscode)
 - [删除 Snap 软件包](/software/remove-snap)
 - [删除 Gnome 应用](/software/remove-gnome-apps)
-- [Gnome 更多缩放的支持](/software/more-dpi)
+- [Gnome 分数缩放支持](/software/fractional-scaling)
 - [Gnome 桌面快捷方式相关](/software/gnome-desktop)
