@@ -2,7 +2,7 @@
 
 Debian / Ubuntu 对于一些高分辨率屏幕，系统默认只有100%和200%的选项，解决方法如下。
 
-## 桌面设置 (Gnome)
+## 桌面设置 (Gnome) {#Desktop}
 
 首先，您需要知道您运行的是 X11 还是 Wayland：
 
@@ -10,16 +10,26 @@ Debian / Ubuntu 对于一些高分辨率屏幕，系统默认只有100%和200%�
 echo $XDG_SESSION_TYPE
 ```
 
-根据 `echo $XDG_SESSION_TYPE` 的输出决定你使用 X11 还是 Wayland 的命令：
+根据 `echo $XDG_SESSION_TYPE` 的输出决定你使用 Wayland 还是 X11 的分数缩放启用命令：
 
 :::: code-group
-```bash [wayland]
+```bash [Wayland]
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
-```bash [x11]
+```bash [Wayland (Gnome 47+)]
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'xwayland-native-scaling']"
+```
+
+```bash [X11]
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 ```
+::::
+
+:::: tip
+
+2024年5月中旬，Gnome 官方对其窗口管理器 mutter 有一个尚未合并的 XWayland 分数倍缩放补丁，在 [GNOME/mutter/merge_requests-3567](https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3567) 可以解决 XWayland 窗口缩放后的模糊问题。Gnome 47+ 已经内置了 XWayland 分数倍清晰缩放功能。
+
 ::::
 
 要禁用分数缩放：
@@ -28,13 +38,7 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 gsettings reset org.gnome.mutter experimental-features
 ```
 
-## 登录屏幕 (GDM)
-
-首先，您需要知道您运行的是 X11 还是 Wayland：
-
-```bash 
-echo $XDG_SESSION_TYPE
-```
+## 登录屏幕 (GDM) {#LoginScreen}
 
 查找你的系统中的 GDM 用户
 
@@ -43,8 +47,6 @@ awk -F':' '{ print $1}' /etc/passwd | grep gdm
 ```
 
 将您的显示器设置复制到 GDM 用户，并在每次更改帐户中的显示设置时重复此步骤：
-
-根据你的 GDM 用户 修改命令中 GDM 用户名
 
 :::: code-group
 ```bash [gdm]
@@ -72,21 +74,4 @@ sudo machinectl shell Debian-gdm@ /bin/bash
 
 如果上述命令无法运行，请确保 `systemd-container` 已经安装。
 
-根据 `echo $XDG_SESSION_TYPE` 的输出决定你使用 X11 还是 Wayland 的命令：
-
-:::: code-group
-```bash [wayland]
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-```
-
-```bash [x11]
-gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
-```
-::::
-
-
-要禁用分数缩放：
-
-```bash
-gsettings reset org.gnome.mutter experimental-features
-```
+访问 GDM 的 Shell 之后，参考[桌面设置](#Desktop)输入命令。
