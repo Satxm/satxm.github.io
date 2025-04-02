@@ -1,5 +1,5 @@
 
-# SSH连接时更换为中文
+# SSH 连接时更换为中文
 
 修改 `~/.bashrc` 或 `/etc/bash.bashrc` 添加以下内容
 

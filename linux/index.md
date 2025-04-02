@@ -7,7 +7,7 @@
 - [移除旧内核](/linux/remove-old)
 - [修改 tty/ssh 显示信息](/linux/linux-motd)
 - [配置 SSH](/linux/ssh-settings)
-- [SSH连接时更换为中文](/linux/ssh-zh_cn)
+- [SSH 连接时更换为中文](/linux/ssh-zh_cn)
 - [安装中文字体](/linux/install-chsfonts)
 - [启用 sudo 权限](/linux/sudo-user)
 - [启用 Tab 补全](/linux/tab-completion)

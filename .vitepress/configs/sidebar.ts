@@ -13,7 +13,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "移除旧内核", link: "/linux/remove-old" },
         { text: "修改 tty/ssh 显示信息", link: "/linux/linux-motd" },
         { text: "配置 SSH", link: "/linux/ssh-settings" },
-        { text: "SSH连接时更换为中文", link: "/linux/ssh-zh_cn" },
+        { text: "SSH 连接时更换为中文", link: "/linux/ssh-zh_cn" },
         { text: "安装中文字体", link: "/linux/install-chsfonts" },
         { text: "启用 sudo 权限", link: "/linux/sudo-user" },
         { text: "启用 Tab 补全", link: "/linux/tab-completion" },

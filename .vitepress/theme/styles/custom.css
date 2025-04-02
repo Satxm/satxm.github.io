@@ -16,7 +16,7 @@
 
 :root {
   /* 全局字体 */
-  --vp-font-family-base: 'LXGW WenKai', sans-serif;
+  --vp-font-family-base: 'Inconsolata', 'LXGW WenKai', sans-serif;
   --vp-font-family-mono: 'Inconsolata', 'LXGW WenKai', sans-serif;
 }
 
