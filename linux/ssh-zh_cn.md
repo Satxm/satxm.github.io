@@ -7,26 +7,34 @@
 
 :::code-group
 
-```bash [/etc/bash.bashrc]
+```bash [仅 TTY 切换英文]
 echo '
-# Change Language to zh-CN when SSH connected:
-if [[ -n $SSH_CONNECTION ]] ; then
-    export LANG="zh_CN.UTF-8"
-    export LANGUAGE="zh_CN:zh"
+# Change Language to en-US when use TTY:
+if [[ -z $(tty | grep pts) ]] ; then
+    export LANG="en_US.UTF-8"
+    export LANGUAGE="en_US:en"
 fi
-' | tee -a /etc/bash.bashrc > /dev/null
-source /etc/bash.bashrc
+' | sudo tee -a /etc/bash.bashrc > /dev/null
 ```
 
-```bash [~/.bashrc]
+```bash [SSH 和终端切换中文]
+echo '
+# Change Language to zh-CN when SSH and Terminal:
+if [[ -n $(tty | grep pts) ]] ; then
+    export LANG="zh_CN.UTF-8"
+    export LANGUAGE="zh_CN:zh"
+fi
+' | sudo tee -a /etc/bash.bashrc > /dev/null
+```
+
+```bash [SSH 切换中文]
 echo '
 # Change Language to zh-CN when SSH connected:
 if [[ -n $SSH_CONNECTION ]] ; then
     export LANG="zh_CN.UTF-8"
     export LANGUAGE="zh_CN:zh"
 fi
-' | tee -a ~/.bashrc > /dev/null
-source ~/.bashrc
+' | sudo tee -a /etc/bash.bashrc > /dev/null
 ```
 ::::
 
