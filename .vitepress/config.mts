@@ -70,6 +70,13 @@ export default defineConfig({
         timeStyle: "medium",
       },
     },
+    notFound: {
+      title: "该页面不存在",
+      quote:
+        "但如果你不改变方向，并且继续寻找，你可能最终会到达你所前往的地方。",
+      linkLabel: "前往首页",
+      linkText: "前往首页",
+    },
     docFooter: {
       prev: "上一篇",
       next: "下一篇",
