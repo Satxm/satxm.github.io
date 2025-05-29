@@ -58,6 +58,8 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "删除 Gnome 应用", link: "/software/remove-gnome-apps" },
         { text: "Gnome 分数缩放支持", link: "/software/fractional-scaling" },
         { text: "Gnome 桌面快捷方式相关", link: "/software/gnome-desktop" },
+        { text: "解决 QQ 音乐闪退问题", link: "/software/qqmusic" },
+        { text: "挂载 VMware 共享文件夹", link: "/software/vmware-share" },
       ],
     },
   ],
