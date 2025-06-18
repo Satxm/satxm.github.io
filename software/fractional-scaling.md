@@ -1,8 +1,8 @@
-# Gnome 分数缩放支持
+# 分数缩放支持
 
 Debian / Ubuntu 对于一些高分辨率屏幕，系统默认只有100%和200%的选项，解决方法如下。
 
-## 桌面设置 (Gnome) {#Desktop}
+## 桌面设置 (Gnome) {#Gnome}
 
 首先，您需要知道您运行的是 X11 还是 Wayland：
 
@@ -38,7 +38,7 @@ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-sca
 gsettings reset org.gnome.mutter experimental-features
 ```
 
-## 登录屏幕 (GDM) {#LoginScreen}
+## 登录屏幕 (GDM) {#GDM}
 
 查找你的系统中的 GDM 用户
 
@@ -75,3 +75,71 @@ sudo machinectl shell Debian-gdm@ /bin/bash
 如果上述命令无法运行，请确保 `systemd-container` 已经安装。
 
 访问 GDM 的 Shell 之后，参考[桌面设置](#Desktop)输入命令。
+
+## 桌面设置 (Gnome) {#KDE}
+
+### X-11
+
+:::: code-group
+```bash [设置 150]
+kwriteconfig6 --file kdeglobals --group KScreen --key ScaleFactor 1.5
+kwriteconfig6 --file kcmfonts --group General --key forceFontDPI 144
+kwriteconfig6 --file kwinrc --group Xwayland --key Scale 1.5
+```
+
+```bash [恢复默认]
+kwriteconfig6 --file kdeglobals --group KScreen --key ScaleFactor 1
+kwriteconfig6 --file kcmfonts --group General --key forceFontDPI 96
+kwriteconfig6 --file kwinrc --group Xwayland --key Scale 1
+```
+:::
+
+多显示器 
+
+在 `终端` 中运行 `xrandr` 获取显示器信息
+
+```bash
+kwriteconfig6 --file kdeglobals --group KScreen --key ScreenScaleFactors 'DisplayPort-1=1.75;DisplayPort-2=1.75;DisplayPort-3=1.75;HDMI-A-2=1.75;'
+```
+
+### Wayland
+
+在 `系统设置 → 显示器配置` 中修改，或直接修改配置文件
+
+```bash
+echo '[
+  {
+    "data": [
+      {
+        "connectorName": "Virtual-1",
+        "scale": 1.5
+      }
+    ],
+    "name": "outputs"
+  },
+  {
+    "data": [
+      {
+        "outputs": [
+        ]
+      }
+    ],
+    "name": "setups"
+  }
+]
+' | tee $HOME/.config/kwinoutputconfig.json > /dev/null
+```
+
+## 登录屏幕 (SDDM) {#SDDM}
+
+:::: code-group
+```bash [设置 150]
+echo '[General]
+GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=1.5
+' | sudo tee /etc/sddm.conf.d/hidpi.conf > /dev/null
+```
+
+```bash [恢复默认]
+sudo rm -rf /etc/sddm.conf.d/hidpi.conf
+```
+:::

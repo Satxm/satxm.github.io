@@ -25,9 +25,9 @@ sudo mount -t fuse.vmhgfs-fuse .host:/Share /mnt/share -o allow_other uid=$(id -
 ## 永久挂载
 
 ```bash
-echo '# VMware shared folder mounted at /mnt/share
+echo "# VMware shared folder mounted at /mnt/share
 .host:/Share /mnt/share fuse.vmhgfs-fuse allow_other,uid=$(id -u),gid=$(id -g),umask=022 0 0
-' | sudo tee -a /etc/fstab > /dev/null
+" | sudo tee -a /etc/fstab > /dev/null
 ```
 
 :::: tip 说明
