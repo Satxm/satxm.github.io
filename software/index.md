@@ -9,7 +9,7 @@
 - [安装 VSCode 编辑器](/software/install-vscode)
 - [删除 Snap 软件包](/software/remove-snap)
 - [删除 Gnome 应用](/software/remove-gnome-apps)
-- [Gnome 分数缩放支持](/software/fractional-scaling)
+- [分数缩放支持](/software/fractional-scaling)
 - [Gnome 桌面快捷方式相关](/software/gnome-desktop)
 - [解决 QQ 音乐闪退问题](/software/qqmusic)
 - [挂载 VMware 共享文件夹](/software/vmware-share)

@@ -92,7 +92,7 @@ kwriteconfig6 --file kdeglobals --group KScreen --key ScaleFactor 1
 kwriteconfig6 --file kcmfonts --group General --key forceFontDPI 96
 kwriteconfig6 --file kwinrc --group Xwayland --key Scale 1
 ```
-:::
+::::
 
 多显示器 
 
