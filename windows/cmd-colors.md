@@ -19,3 +19,16 @@
 | 灰 | 90 | 100 | DarkGray | <p style="background: #767676;color: #767676">██████</p> |
 | 亮白 | 97 | 107 | White | <p style="background: #F2F2F2;color: #F2F2F2">██████</p> |
 
+# 命令行输出
+
+```cmd
+for /f %a in ('echo prompt $E ^| cmd.exe') do @set "_esc=%a"
+for %# in (30,91,31,92,32,93,33,94,34,95,35,96,36,37,90,97) do @echo %_esc%[%#m===Text with Color %#===%_esc%[0m
+for %# in (40,101,41,102,42,103,43,104,44,105,45,106,46,47,100,107) do @echo %_esc%[%#m===Background with Color %#===%_esc%[0m
+```
+
+```powershell
+$Color = @("Black","Red","DarkRed","Green","DarkGreen","Yellow","DarkYellow","Blue","DarkBlue","Magenta","DarkMagenta","Cyan","DarkCyan","Gray","DarkGray","White")
+$Color | ForEach-Object { Write-Host -Fore $_ ===Text with Color $_=== }
+$Color | ForEach-Object { Write-Host -Back $_ ===Background with Color $_=== }
+```
