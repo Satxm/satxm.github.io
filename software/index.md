@@ -13,3 +13,4 @@
 - [Gnome 桌面快捷方式相关](/software/gnome-desktop)
 - [解决 QQ 音乐闪退问题](/software/qqmusic)
 - [挂载 VMware 共享文件夹](/software/vmware-share)
+- [将编号转换为文本](/software/numstotext)

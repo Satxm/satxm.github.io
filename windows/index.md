@@ -7,3 +7,6 @@
 - [文件与 Base64 相互转换](/windows/base64-file-convert)
 - [CMD 获取返回值第一个结果](windows/cmd-for-first)
 - [命令行颜色代码](/windows/cmd-colors)
+- [PowerShell 创建快捷方式](/windows/powershell-shortcut)
+- [在 PowerShell 中创建符号链接](/windows/powershell-link)
+- 
